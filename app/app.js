@@ -1,0 +1,2 @@
+rankingManager.init();
+game.init();

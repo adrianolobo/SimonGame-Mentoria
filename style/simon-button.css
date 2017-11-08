@@ -55,7 +55,6 @@
 .simon-button .red::after {
   background-color: #B71C1C;
 }
-.simon-button .red:hover::after,
 .simon-button .red.active::after {
   background-color: #D50000;
 }
@@ -63,7 +62,6 @@
 .simon-button .green::after {
   background-color: #1B5E20;
 }
-.simon-button .green:hover::after,
 .simon-button .green.active::after {
   background-color: #00C853;
 }
@@ -71,7 +69,6 @@
 .simon-button .yellow::after {
   background-color: #F57F17;
 }
-.simon-button .yellow:hover::after,
 .simon-button .yellow.active::after {
   background-color: #FFD600;
 }
@@ -79,7 +76,6 @@
 .simon-button .blue::after {
   background-color: #0D47A1;
 }
-.simon-button .blue:hover::after,
 .simon-button .blue.active::after {
   background-color: #2962FF;
 }

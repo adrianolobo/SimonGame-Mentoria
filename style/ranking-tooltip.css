@@ -1,0 +1,64 @@
+.ranking-tooltip {
+  position: fixed;
+  left: 100%;
+  transition: all .3s ease;
+  cursor: pointer;
+  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.12))
+										drop-shadow(0 3px 1px rgba(0, 0, 0, 0.14))
+										drop-shadow(0 1px 5px rgba(0, 0, 0, 0.12))
+										drop-shadow(0 -1px 2px rgba(0, 0, 0, 0.1));
+}
+
+.ranking-tooltip.open {
+  transform: translateX(-100%);
+}
+.ranking-tooltip .tag {
+  position: absolute;
+  right: 100%;
+  background-color: #fff;
+  padding: 5px 10px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  color: #3F51B5;
+  padding: 5px 20px
+}
+
+.ranking-tooltip .panel {
+  background-color: #fff;
+  padding: 10px;
+  border-bottom-left-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  min-width: 170px;
+}
+
+.ranking-tooltip .panel .title{
+  text-align: center;
+  margin: 0px;
+  border-bottom: 1px solid #e3e3e3;
+  color: #212121;
+}
+
+.ranking-list {
+  list-style: none;
+  margin: 10px 0px 0px 0px;
+  padding: 0px;
+}
+
+.ranking-list .item {
+  padding: 2px;
+  margin: 2px;
+  display: flex;
+  border-bottom: 1px solid #e3e3e3;
+  color: #424242;
+}
+.ranking-list .item:last-child {
+  border-bottom: 0px solid #e3e3e3;
+}
+
+.ranking-list .item .score {
+  max-width: 35px;
+  min-width: 35px;
+  font-size: 20px;
+  font-weight: bold;
+}

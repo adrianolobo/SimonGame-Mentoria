@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="./style/fonts.css">
   <link rel="stylesheet" href="./style/base.css">
   <link rel="stylesheet" href="./style/simon-button.css">
+  <link rel="stylesheet" href="./style/ranking-tooltip.css">
+  <link rel="stylesheet" href="./vendor/font-awesome-4.7.0/css/font-awesome.min.css">
 </head>
 <body>
   <main>
@@ -16,22 +18,47 @@
     <div class="game-canvas">
       <div class="buttons-container">
         <div class="simon-button">
-          <button class="simon-button__button red "></button>
+          <button class="simon-button__button red" id="button-red"></button>
         </div>
         <div class="simon-button">
-          <button class="simon-button__button blue"></button>
+          <button class="simon-button__button blue"  id="button-blue"></button>
         </div>
         <div class="simon-button">
-          <button class="simon-button__button green"></button>
+          <button class="simon-button__button green"  id="button-green"></button>
         </div>
         <div class="simon-button">
-          <button class="simon-button__button yellow"></button>
+          <button class="simon-button__button yellow"  id="button-yellow"></button>
         </div>
       </div>
       <div class="game-score">
         Score: 0
       </div>
     </div>
+    <div class="ranking-tooltip" id="ranking-tooltip">
+      <div class="tag">
+        <i class="fa fa-trophy" aria-hidden="true"></i>
+      </div>
+      <div class="panel">
+        <h3 class="title">Ranking</h3>
+        <ul class="ranking-list">
+          <li class="item">
+            <span class="score">35</span>
+            <span class="name">Adriano</span>
+          </li>
+          <li class="item">
+            <span class="score">50</span>
+            <span class="name">Larissa</span>
+          </li>
+          <li class="item">
+            <span class="score">75</span>
+            <span class="name">Camila</span>
+          </li>
+        </ul>
+      </div>
+    </div>
   </main>
+  <script type="text/javascript" src="./app/rankingManager.js"></script>
+  <script type="text/javascript" src="./app/game.js"></script>
+  <script type="text/javascript" src="./app/app.js"></script>
 </body>
 </html>
