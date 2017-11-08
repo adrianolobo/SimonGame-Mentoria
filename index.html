@@ -8,13 +8,29 @@
   <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
   <link rel="stylesheet" href="./style/fonts.css">
   <link rel="stylesheet" href="./style/base.css">
-  <link rel="stylesheet" href="./style/button.css">
+  <link rel="stylesheet" href="./style/simon-button.css">
 </head>
 <body>
   <main>
     <h1 class="game-title">Simon Game</h1>
-    <div class="buttons__container">
-      <div class="button"></div>
+    <div class="game-canvas">
+      <div class="buttons-container">
+        <div class="simon-button">
+          <button class="simon-button__button red "></button>
+        </div>
+        <div class="simon-button">
+          <button class="simon-button__button blue"></button>
+        </div>
+        <div class="simon-button">
+          <button class="simon-button__button green"></button>
+        </div>
+        <div class="simon-button">
+          <button class="simon-button__button yellow"></button>
+        </div>
+      </div>
+      <div class="game-score">
+        Score: 0
+      </div>
     </div>
   </main>
 </body>
