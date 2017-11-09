@@ -15,8 +15,15 @@
 <body>
   <main>
     <h1 class="game-title">Simon Game</h1>
-    <div class="game-canvas">
-      <div class="buttons-container">
+    <div class="game-canvas pre-game" id="game-canvas">
+      <div class="pre-game-container">
+        <div class="simon-button">
+          <button class="simon-button__button" id="play-button">
+            <i class="fa fa-play fa-5x" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+      <div class="game-container">
         <div class="simon-button">
           <button class="simon-button__button red" id="button-red"></button>
         </div>
@@ -31,7 +38,7 @@
         </div>
       </div>
       <div class="game-score">
-        Score: 0
+        Score: <span id="score">0</span>
       </div>
     </div>
     <div class="ranking-tooltip" id="ranking-tooltip">

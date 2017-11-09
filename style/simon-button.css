@@ -14,17 +14,21 @@
   user-select: none;
   outline: 0;
   position: relative;
+  color: #8C9EFF;
 }
 
 .simon-button__button:active {
-  top: 2px;
+  top: 3px;
+}
+.simon-button__button[disabled] {
+  top: 5px;
 }
 
 .simon-button::before {
   content: ' ';
   background-color: #ccc;
   position: absolute;
-  bottom: -3px;
+  bottom: -5px;
   left: 50%;
   transform: translateX(-50%);
   border-radius: 5px;
@@ -55,6 +59,7 @@
 .simon-button .red::after {
   background-color: #B71C1C;
 }
+.simon-button .red:active::after,
 .simon-button .red.active::after {
   background-color: #D50000;
 }
@@ -62,6 +67,7 @@
 .simon-button .green::after {
   background-color: #1B5E20;
 }
+.simon-button .green:active::after,
 .simon-button .green.active::after {
   background-color: #00C853;
 }
@@ -69,6 +75,7 @@
 .simon-button .yellow::after {
   background-color: #F57F17;
 }
+.simon-button .yellow:active::after,
 .simon-button .yellow.active::after {
   background-color: #FFD600;
 }
@@ -76,6 +83,7 @@
 .simon-button .blue::after {
   background-color: #0D47A1;
 }
+.simon-button .blue:active::after,
 .simon-button .blue.active::after {
   background-color: #2962FF;
 }

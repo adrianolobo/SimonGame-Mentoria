@@ -1,21 +1,32 @@
+const buttonTimeLight = 1000;
+const buttonTimeDelayLight = 500;
+const delayBetweenLevels = 500;
+
 const game = {
-  init() {
+  init(params) {
     this.buttons = [];
     this.buttons.push(document.getElementById('button-red'));
     this.buttons.push(document.getElementById('button-blue'));
     this.buttons.push(document.getElementById('button-green'));
     this.buttons.push(document.getElementById('button-yellow'));
+    this.scoreEl = document.getElementById('score');
 
-    this.score = 2;
+    this.endGameCallback = params.onEndGame;
+    this.score = 0;
     this.gameSequence = [];
-    this.isShowingSequence = false;
-    this._start();
+    this.isShowingSequence = true;
+    this._manageButtonPress();
   },
-  _start() {
+  newGame() {
+    this._updateScore(0);
+    this._startLevel();
+  },
+  _startLevel() {
     this._setSequence();
     this._animateSequence();
   },
   _setSequence() {
+    this.gameSequence = [];
     for (var i = 0; i < this.score+1; i++) {
       this.gameSequence.push(getRandomSequenceItem());
     }
@@ -31,19 +42,62 @@ const game = {
             if (key === this.score) {
               this._toggleShowingSequence(false);
             }
-          }, 500);
-        }, key * 1500);
+          }, buttonTimeDelayLight);
+        }, key * (buttonTimeDelayLight + buttonTimeLight));
       });
-    }, 500);
+    }, buttonTimeDelayLight);
+  },
+  _manageButtonPress() {
+    this.buttons.forEach((button) => {
+      button.addEventListener('click', () => {
+        if (!this._canPressButton()) {
+          return;
+        }
+        if (this._getButtonIndex(button) === this.gameSequence[0]) {
+          this.gameSequence.shift();
+          if (this.gameSequence.length === 0) {
+            this._nextLevel(this.score + 1);
+          }
+        } else {
+          this._endGame();
+        }
+      });
+    });
+  },
+  _nextLevel(newLevel) {
+    this._updateScore(newLevel);
+    setTimeout(() => {
+      this._startLevel();
+    }, delayBetweenLevels);
+  },
+  _endGame() {
+    this.endGameCallback();
   },
   _toggleShowingSequence(isShowing) {
     this.isShowingSequence = isShowing;
+    this.buttons.forEach((button) => {
+      button.disabled = isShowing;
+    })
+  },
+  _updateScore(newScore) {
+    this.score = newScore;
+    this.scoreEl.innerHTML = String(newScore);
+  },
+  _getButtonIndex(button) {
+    for (var i = 0; i < this.buttons.length; i++) {
+      if (this.buttons[i] === button) {
+        return i;
+      }
+    }
   },
   _deActiveAllButtons() {
     this.buttons.forEach((button) => {
       deactiveButton(button);
     });
-  }
+  },
+  _canPressButton() {
+    return !this.isShowingSequence;
+  },
 }
 
 const buttonsAmount = 4;
