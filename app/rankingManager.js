@@ -4,7 +4,7 @@ const rankingManager = {
     const $saveRanking = document.getElementById('save-ranking');
     this.$userNameInput = document.getElementById('user-name-input');
     this.$rankingList = document.getElementById('ranking-list');
-    this.$rankingItemTemplate = document.getElementById('ranking-item-template');
+    this.$rankingItemTemplate = document.getElementById('ranking-item-template').content.querySelector('.item');
 
     $rankingTooltip.addEventListener('click', this._toggleRanking);
     $saveRanking.addEventListener('click', (this._saveRanking).bind(this));
