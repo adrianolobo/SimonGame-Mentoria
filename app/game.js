@@ -21,6 +21,9 @@ const game = {
     this._updateScore(0);
     this._startLevel();
   },
+  getScore() {
+    return this.score;
+  },
   _startLevel() {
     this._setSequence();
     this._animateSequence();

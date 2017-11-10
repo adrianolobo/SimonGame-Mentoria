@@ -37,6 +37,14 @@
           <button class="simon-button__button yellow"  id="button-yellow"></button>
         </div>
       </div>
+      <div class="pos-game-container">
+        <input type="text" class="user-name-input" maxlength="17" id="user-name-input">
+        <div class="simon-button">
+          <button class="simon-button__button" id="save-ranking">
+            <i class="fa fa-trophy fa-5x"></i>
+          </button>
+        </div>
+      </div>
       <div class="game-score">
         Score: <span id="score">0</span>
       </div>
@@ -47,23 +55,17 @@
       </div>
       <div class="panel">
         <h3 class="title">Ranking</h3>
-        <ul class="ranking-list">
-          <li class="item">
-            <span class="score">35</span>
-            <span class="name">Adriano</span>
-          </li>
-          <li class="item">
-            <span class="score">50</span>
-            <span class="name">Larissa</span>
-          </li>
-          <li class="item">
-            <span class="score">75</span>
-            <span class="name">Camila</span>
-          </li>
+        <ul class="ranking-list" id="ranking-list">
         </ul>
       </div>
     </div>
   </main>
+  <teamplate id="ranking-item-template">
+    <li class="item">
+      <span class="score"></span>
+      <span class="name"></span>
+    </li>
+  </teamplate>
   <script type="text/javascript" src="./app/rankingManager.js"></script>
   <script type="text/javascript" src="./app/game.js"></script>
   <script type="text/javascript" src="./app/app.js"></script>

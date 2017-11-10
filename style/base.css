@@ -28,7 +28,8 @@ main {
 }
 
 .game-canvas.in-game .game-container,
-.game-canvas.pre-game .pre-game-container {
+.game-canvas.pre-game .pre-game-container,
+.game-canvas.pos-game .pos-game-container {
   opacity: 1;
   visibility: visible;
 }
@@ -42,7 +43,8 @@ main {
 }
 
 .pre-game-container,
-.game-container {
+.game-container,
+.pos-game-container {
   position: absolute;
   display: flex;
   justify-content: space-around;
@@ -69,4 +71,14 @@ main {
   background-color: #607D8B;
   color: #fff;
   font-size: 22px;
+}
+
+
+.user-name-input {
+  height: 80%;
+  font-size: 60px;
+  border-radius: 5px;
+  border: 0;
+  padding: 0px 30px;
+  color: #6775c4;
 }

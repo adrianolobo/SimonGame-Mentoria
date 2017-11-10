@@ -5,7 +5,7 @@ const POS_GAME = 'pos-game';
 
 
 (function() {
-  rankingManager.init();
+  rankingManager.init({ onNewRanking: newRanking });
   game.init({ onEndGame: endGame });
 
   const playButton = document.getElementById('play-button');
@@ -17,6 +17,10 @@ const POS_GAME = 'pos-game';
   }
 
   function endGame() {
+    changeGameState(POS_GAME);
+  }
+
+  function newRanking() {
     changeGameState(PRE_GAME);
   }
 
